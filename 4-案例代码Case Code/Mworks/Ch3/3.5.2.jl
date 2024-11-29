@@ -1,0 +1,12 @@
+u = [0, 1, 2, 1, 0];
+v = [0, 1, 0, 1, 0];
+Lconv = conv(u,v);
+Cconv_5 = cconv(u,v,5);
+Cconv_10 = cconv(u,v,10);
+x = circshift(u,2);
+y = circshift(u,-2);
+subplot(4,2,1); stem(u); xlabel("序号"); ylabel("u(n)");
+subplot(4,2,2); stem(v); xlabel("序号"); ylabel("v(n)");
+subplot(4,1,2); stem(Lconv); xlabel("序号"); ylabel("Lconv"); xlim([0 10]);
+subplot(4,1,3); stem(Cconv_5); xlabel("序号"); ylabel("Cconv_5"); xlim([0 10]);
+subplot(4,1,4); stem(Cconv_10); xlabel("序号"); ylabel("Cconv_10"); xlim([0 10]);
